@@ -1,0 +1,22 @@
+# Ignore build output and IDE files
+/target/
+*.iml
+.idea/
+*.class
+*.log
+*.tmp
+*.swp
+.DS_Store
+
+# Ignore Maven wrapper binaries
+mvnw
+mvnw.cmd
+
+# Ignore OS files
+Thumbs.db
+
+# Ignore doc directory and all its contents
+doc/
+
+# Ignore ports.txt file
+# ports.txt
