@@ -18,8 +18,6 @@ This repository contains all guided projects from the course **"Master Microserv
   Local Git repository containing configuration files for all microservices.
 - `naming-server/`  
   Eureka Naming Server for service discovery among microservices.
-- `doc/`  
-  Documentation and course presentation slides.
 
 ## Getting Started
 
