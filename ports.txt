@@ -18,3 +18,22 @@ Port: 8765
 
 7. Zipkin Distributed Tracing Server
 Port: 9411
+
+******************************************************
+URL: Currency Exchange Service
+http://localhost:8000/currency-exchange/from/USD/to/INR
+
+URL: Currency Conversion Service
+http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/10
+
+******************************************************
+
+PS:
+netstat -ano | findstr :8000
+# This command lists all network connections and listening ports, then filters the output to show only lines containing ":8000".
+# It helps you find which process is using port 8000.
+
+taskkill /PID 5084 /F
+# This command forcefully terminates the process with PID 5084.
+# Useful for stopping a process that is using a specific port.
+
