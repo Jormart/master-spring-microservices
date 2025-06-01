@@ -6,6 +6,18 @@ This repository contains all guided projects from the course **"Master Microserv
 
 - `restful-web-services/`  
   Build RESTful APIs with Spring Boot, including user management and hello world examples.
+- `currency-exchange-service/`  
+  Microservice for providing currency exchange rates, with H2 in-memory database and Spring Data JPA.
+- `currency-conversion-service/`  
+  Microservice for currency conversion, consuming the currency exchange service.
+- `limits-service/`  
+  Microservice for demonstrating configuration management with Spring Cloud Config Server.
+- `spring-cloud-config-server/`  
+  Centralized configuration server for all microservices, using a local Git-backed repository (`git-localconfig-repo/`).
+- `git-localconfig-repo/`  
+  Local Git repository containing configuration files for all microservices.
+- `doc/`  
+  Documentation and course presentation slides.
 
 ## Getting Started
 
@@ -15,7 +27,7 @@ This repository contains all guided projects from the course **"Master Microserv
 - An IDE such as VS Code or IntelliJ IDEA
 
 ### Running a Project
-1. Navigate to the project directory (e.g., `restful-web-services`).
+1. Navigate to the project directory (e.g., `currency-exchange-service`).
 2. Install dependencies and build the project:
    ```bash
    ./mvnw clean install
@@ -26,13 +38,25 @@ This repository contains all guided projects from the course **"Master Microserv
    ```
    Or, run the generated JAR file:
    ```bash
-   java -jar target/restful-web-services-0.0.1-SNAPSHOT.jar
+   java -jar target/<project-name>-0.0.1-SNAPSHOT.jar
    ```
+
+### Running Multiple Microservices
+- Each microservice can be run on a different port by setting `server.port` in its `src/main/resources/application.properties`.
+- The `spring-cloud-config-server` should be started first if you want to use centralized configuration.
+- The `git-localconfig-repo/` contains the configuration files used by the config server.
+
+### H2 Database Console
+- Access the H2 console at `http://localhost:<port>/h2-console` for services using H2.
+- Default JDBC URL: `jdbc:h2:mem:testdb`
 
 ## Projects
 
 - **restful-web-services**: Build and test RESTful web services with Spring Boot.
-- More projects will be added as you progress through the course.
+- **currency-exchange-service**: Provides currency exchange rates.
+- **currency-conversion-service**: Converts currencies using exchange rates from the exchange service.
+- **limits-service**: Demonstrates externalized configuration with Spring Cloud Config.
+- **spring-cloud-config-server**: Centralized configuration server for all microservices.
 
 ## Resources
 - [Spring Boot Documentation](https://spring.io/projects/spring-boot)
