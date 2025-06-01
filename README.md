@@ -16,6 +16,8 @@ This repository contains all guided projects from the course **"Master Microserv
   Centralized configuration server for all microservices, using a local Git-backed repository (`git-localconfig-repo/`).
 - `git-localconfig-repo/`  
   Local Git repository containing configuration files for all microservices.
+- `naming-server/`  
+  Eureka Naming Server for service discovery among microservices.
 - `doc/`  
   Documentation and course presentation slides.
 
@@ -45,6 +47,7 @@ This repository contains all guided projects from the course **"Master Microserv
 - Each microservice can be run on a different port by setting `server.port` in its `src/main/resources/application.properties`.
 - The `spring-cloud-config-server` should be started first if you want to use centralized configuration.
 - The `git-localconfig-repo/` contains the configuration files used by the config server.
+- The `naming-server` (Eureka) should be started before other services that require service discovery.
 
 ### H2 Database Console
 - Access the H2 console at `http://localhost:<port>/h2-console` for services using H2.
@@ -57,6 +60,7 @@ This repository contains all guided projects from the course **"Master Microserv
 - **currency-conversion-service**: Converts currencies using exchange rates from the exchange service.
 - **limits-service**: Demonstrates externalized configuration with Spring Cloud Config.
 - **spring-cloud-config-server**: Centralized configuration server for all microservices.
+- **naming-server**: Eureka Naming Server for service discovery.
 
 ## Resources
 - [Spring Boot Documentation](https://spring.io/projects/spring-boot)
